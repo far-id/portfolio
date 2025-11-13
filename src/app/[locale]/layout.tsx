@@ -30,13 +30,13 @@ export default async function LocaleLayout({ children, params }: Props) {
 	if (!hasLocale(routing.locales, locale)) {
 		notFound();
 	}
-	const messages = await loadMessages(locale, ['layout']);
+
 	return (
 		<html lang={locale} className='dark' style={{ colorScheme: 'dark' }} suppressHydrationWarning>
 			<body
 				className={`${firaCode.variable} font-sans antialiased transition-colors duration-200 text-sm`}
 			>
-				<NextIntlClientProvider locale={locale} messages={messages}>
+				<NextIntlClientProvider locale={locale}>
 					<ThemeProvider
 						attribute='class'
 						defaultTheme='dark'

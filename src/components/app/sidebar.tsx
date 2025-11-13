@@ -1,9 +1,8 @@
 'use client';
-import Link from 'next/link';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { NAVIGATION } from '@/constants/navigation';
 import { useEffect, useRef } from 'react';
-import { usePathname } from '@/i18n/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
 
 export default function Sidebar() {
 	const pathname = usePathname();
@@ -20,7 +19,9 @@ export default function Sidebar() {
 	};
 
 	useEffect(() => {
-		const activeIndex = NAVIGATION.findIndex((item) => item.path === pathname);
+		const activeIndex = NAVIGATION.findIndex((item) =>
+			item.path.startsWith(pathname.split('/').slice(0, 2).join('/'))
+		);
 		handleTransition(activeIndex);
 		console.log('pathname:', pathname);
 	}, [pathname]);

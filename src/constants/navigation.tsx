@@ -1,4 +1,6 @@
 import { Icon } from '@/components/app/icon';
+import Personal from '@/markdown/personal.mdx';
+import Skills from '@/markdown/skills.mdx';
 
 export const NAVIGATION: {
 	label: string;
@@ -8,6 +10,7 @@ export const NAVIGATION: {
 	children?: {
 		label: string;
 		path: string;
+		mdx_component?: React.ComponentType;
 	}[];
 }[] = [
 	{
@@ -23,12 +26,14 @@ export const NAVIGATION: {
 		tooltip: '_About',
 		children: [
 			{
-				label: 'Personal',
-				path: '/about/personal',
+				label: '_personal.ts',
+				path: '/about/personal.ts',
+				mdx_component: Personal,
 			},
 			{
-				label: 'Skills',
-				path: '/about/skills',
+				label: '_skills.ts',
+				path: '/about/skills.ts',
+				mdx_component: Skills,
 			},
 		],
 	},

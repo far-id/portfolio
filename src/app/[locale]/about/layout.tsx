@@ -1,0 +1,50 @@
+'use client';
+import FadeIn from '@/components/app/fade-in';
+import { Icon } from '@/components/app/icon';
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from '@/components/ui/accordion';
+import { NAVIGATION } from '@/constants/navigation';
+import { Link, usePathname } from '@/i18n/navigation';
+import React from 'react';
+
+export default function AboutLayout({ children }: { children: React.ReactNode }) {
+	const pathname = usePathname();
+	const tabs = NAVIGATION.filter((nav) => nav.label === 'About')[0]?.children;
+	if (tabs === undefined) {
+		return null;
+	}
+	return (
+		<div className='grid grid-cols-12 overflow-hidden h-full'>
+			<div className='col-span-3 xl:col-span-2 border-r overflow-auto'>
+				<Accordion type='single' collapsible defaultValue='about'>
+					<AccordionItem value='about' defaultChecked>
+						<AccordionTrigger className='border-b px-4 py-3 text-left'>About Me</AccordionTrigger>
+						<AccordionContent>
+							<FadeIn>
+								<div className='py-4 border-b flex flex-col gap-2'>
+									{tabs.map((tab, index) => (
+										<Link
+											key={index}
+											href={tab.path}
+											className={`text-sm hover:underline flex gap-x-2 items-center underline-offset-2 px-4 ${
+												pathname === tab.path && 'bg-muted'
+											}`}
+										>
+											<Icon.typescript className='size-4 shrink-0' />
+											{tab.label}
+										</Link>
+									))}
+								</div>
+							</FadeIn>
+						</AccordionContent>
+					</AccordionItem>
+				</Accordion>
+			</div>
+			<div className='col-span-9 xl:col-span-10 overflow-auto'>{children}</div>
+		</div>
+	);
+}
