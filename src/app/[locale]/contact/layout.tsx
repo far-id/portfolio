@@ -61,7 +61,9 @@ export default function ContactLayout({ children }: Readonly<{ children: React.R
 					</AccordionItem>
 				</Accordion>
 			</div>
-			<div className='col-span-9 xl:col-span-10 overflow-auto'>{children}</div>
+			<div className='col-span-9 xl:col-span-10 overflow-auto'>
+				<FadeIn>{children}</FadeIn>
+			</div>
 		</div>
 	);
 }
