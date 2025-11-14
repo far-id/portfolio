@@ -7,16 +7,34 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from '@/components/ui/accordion';
-import { NAVIGATION } from '@/constants/navigation';
-import { Link, usePathname } from '@/i18n/navigation';
+import { siteConfig } from '@/constants/siteConfig';
+import { Link } from '@/i18n/navigation';
 import React from 'react';
 
-export default function AboutLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-	const pathname = usePathname();
-	const tabs = NAVIGATION.filter((nav) => nav.label === 'About')[0]?.children;
-	if (tabs === undefined) {
-		return null;
-	}
+const CONTACT = [
+	{
+		label: 'Email',
+		path: siteConfig.links.mailto,
+		icon: Icon.email,
+	},
+	{
+		label: 'LinkedIn',
+		path: siteConfig.links.linkedin,
+		icon: Icon.fillLinkedin,
+	},
+	{
+		label: 'GitHub',
+		path: siteConfig.links.github,
+		icon: Icon.fillGithub,
+	},
+	{
+		label: 'Instagram',
+		path: siteConfig.links.instagram,
+		icon: Icon.instagram,
+	},
+];
+
+export default function ContactLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<div className='grid grid-cols-12 overflow-hidden h-full'>
 			<div className='col-span-3 xl:col-span-2 border-r overflow-auto'>
@@ -26,16 +44,15 @@ export default function AboutLayout({ children }: Readonly<{ children: React.Rea
 						<AccordionContent>
 							<FadeIn>
 								<div className='py-4 border-b flex flex-col gap-2'>
-									{tabs.map((tab, index) => (
+									{CONTACT.map((mail, index) => (
 										<Link
 											key={index}
-											href={tab.path}
-											className={`text-sm hover:underline flex gap-x-2 items-center underline-offset-2 px-4 ${
-												pathname === tab.path && 'bg-muted'
-											}`}
+											href={mail.path}
+											target='_blank'
+											className={`text-sm hover:underline flex gap-x-2 items-center underline-offset-2 px-4`}
 										>
-											<Icon.typescript className='size-4 shrink-0' />
-											{tab.label}
+											<mail.icon className='size-4 shrink-0' />
+											{mail.label}
 										</Link>
 									))}
 								</div>

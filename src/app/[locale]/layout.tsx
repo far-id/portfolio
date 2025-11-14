@@ -6,8 +6,8 @@ import { ThemeProvider } from '@/components/app/theme-provider';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { loadMessages } from '@/lib/i18n';
 import Sidebar from '@/components/app/sidebar';
+import { Toaster } from '@/components/ui/sonner';
 
 const firaCode = Fira_Code({
 	variable: '--font-fira-code',
@@ -24,7 +24,7 @@ type Props = {
 	params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({ children, params }: Props) {
+export default async function LocaleLayout({ children, params }: Readonly<Props>) {
 	// Ensure that the incoming `locale` is valid
 	const { locale } = await params;
 	if (!hasLocale(routing.locales, locale)) {
@@ -51,7 +51,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 						</AppLayout>
 					</ThemeProvider>
 				</NextIntlClientProvider>
-
+				<Toaster />
 				{/* Background effect */}
 				<div className='grain-noise fixed inset-0 pointer-events-none opacity-30' />
 			</body>

@@ -37,29 +37,32 @@ export function ThemeToggle() {
 					className='rounded-full bg-white dark:bg-black size-fit text-foreground border-0'
 				>
 					<AnimatePresence mode='wait' initial={false}>
-						{mounted ? (
-							theme === 'dark' ? (
-								<motion.div
-									key='moon'
-									initial={{ opacity: 0, rotate: -90 }}
-									animate={{ opacity: 1, rotate: 0 }}
-									transition={{ duration: 0.2 }}
-									exit={{ opacity: 0, rotate: 90 }}
-								>
-									<Icon.moon className='size-4' />
-								</motion.div>
-							) : (
-								<motion.div
-									key='sun'
-									initial={{ opacity: 0, rotate: 90 }}
-									animate={{ opacity: 1, rotate: 0 }}
-									transition={{ duration: 0.2 }}
-									exit={{ opacity: 0, rotate: -90 }}
-								>
-									<Icon.sun className='size-4' />
-								</motion.div>
-							)
-						) : null}
+						{mounted && (
+							<>
+								{theme === 'dark' && (
+									<motion.div
+										key='Moon'
+										initial={{ opacity: 0, rotate: -90 }}
+										animate={{ opacity: 1, rotate: 0 }}
+										transition={{ duration: 0.2 }}
+										exit={{ opacity: 0, rotate: 90 }}
+									>
+										<Icon.moon className='size-4' />
+									</motion.div>
+								)}
+								{theme !== 'dark' && (
+									<motion.div
+										key='Sun'
+										initial={{ opacity: 0, rotate: 90 }}
+										animate={{ opacity: 1, rotate: 0 }}
+										transition={{ duration: 0.2 }}
+										exit={{ opacity: 0, rotate: -90 }}
+									>
+										<Icon.sun className='size-4' />
+									</motion.div>
+								)}
+							</>
+						)}
 					</AnimatePresence>
 					<span className='sr-only'>Toggle theme</span>
 				</Button>

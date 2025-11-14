@@ -14,8 +14,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/:locale/mark",
-        destination: "/:locale/mark/personal.ts",
+        source: "/:locale/about/personal",
+        destination: "/:locale/about/personal.ts",
         permanent: true,
       }
     ];

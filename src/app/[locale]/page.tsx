@@ -1,5 +1,5 @@
 import { Icon } from '@/components/app/icon';
-import { getTranslations } from 'next-intl/server';
+import { siteConfig } from '@/constants/siteConfig';
 import Link from 'next/link';
 
 const socialLinks: {
@@ -9,27 +9,22 @@ const socialLinks: {
 }[] = [
 	{
 		name: 'Github',
-		href: 'https://github.com/far-id',
+		href: siteConfig.links.github,
 		icon: Icon.github,
 	},
 	{
 		name: 'Instagram',
-		href: 'https://www.instagram.com/faridrizkywijaya',
+		href: siteConfig.links.instagram,
 		icon: Icon.instagram,
 	},
 	{
 		name: 'LinkedIn',
-		href: 'https://www.linkedin.com/in/farid-rizky-wijaya-438a60212',
+		href: siteConfig.links.linkedin,
 		icon: Icon.linkedin,
 	},
 ] as const;
 
-export default async function IndexPage({ locale }: { locale: string }) {
-	const t = await getTranslations({
-		locale: locale,
-		namespace: 'home',
-	});
-
+export default async function IndexPage() {
 	return (
 		<div className='flex items-center justify-center size-full'>
 			<div className='flex flex-col items-center justify-center'>
@@ -48,9 +43,9 @@ export default async function IndexPage({ locale }: { locale: string }) {
 					<span className='text-[#C87F30]'>{' = '}</span>
 					<Link
 						target='_blank'
-						href={'https://github.com/far-id'}
+						href={siteConfig.links.github}
 						className='text-[#8DC5EB] hover:underline underline-offset-2'
-					>{`'https://github.com/far-id'`}</Link>
+					>{`'${siteConfig.links.github}'`}</Link>
 					<span className='text-[#C9D1D9] -ml-2'>;</span>
 				</div>
 				<div className='flex gap-x-4 mt-6'>

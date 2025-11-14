@@ -2,7 +2,7 @@ import { MDXComponent } from '@/components/app/mdx-component';
 import { NAVIGATION } from '@/constants/navigation';
 import React from 'react';
 
-export default async function page({ params }: { params: { locale: string; section: string } }) {
+export default async function page({ params }: Readonly<{ params: Promise<{ section: string }> }>) {
 	const { section } = await params;
 	const post = NAVIGATION.find((nav) => nav.label === 'About')?.children?.find((child) =>
 		child.path.endsWith(`/${section}`)

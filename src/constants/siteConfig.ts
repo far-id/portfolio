@@ -5,12 +5,14 @@ export const siteConfig = {
   description:
     "I'm a Software Developer Based in Indonesia. I describe myself as a passionate developer who loves coding, the web platform and anime ❤️",
   username: "far-id",
-  // url: "https://faridrizkywijaya.com",
+  url: "https://faridrw.my.id",
+  domain: "faridrw.my.id",
   repository: "https://github.com/far-id/portfolio",
   links: {
     github: "https://github.com/far-id",
     linkedin: "https://www.linkedin.com/in/farid-rizky-wijaya-438a60212",
     instagram: "https://www.instagram.com/faridrizkywijaya",
-    email: "mailto:faridrizkywijaya@gmail.com",
+    mailto: "mailto:faridrw.tech@gmail.com",
+    email: "faridrw.tech@gmail.com",
   },
 };
