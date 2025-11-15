@@ -13,7 +13,7 @@ import React from 'react';
 
 export default function AboutLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	const pathname = usePathname();
-	const tabs = NAVIGATION.filter((nav) => nav.label === 'About')[0]?.children;
+	const tabs = NAVIGATION.find((nav) => nav.label === 'About')?.children;
 	if (tabs === undefined) {
 		return null;
 	}
@@ -26,9 +26,9 @@ export default function AboutLayout({ children }: Readonly<{ children: React.Rea
 						<AccordionContent>
 							<FadeIn>
 								<div className='py-4 border-b flex flex-col gap-2'>
-									{tabs.map((tab, index) => (
+									{tabs.map((tab) => (
 										<Link
-											key={index}
+											key={tab.path}
 											href={tab.path}
 											className={`text-sm hover:underline flex gap-x-2 items-center underline-offset-2 px-4 ${
 												pathname === tab.path && 'bg-muted'

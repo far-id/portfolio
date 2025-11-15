@@ -1,3 +1,4 @@
+'use client';
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -5,28 +6,43 @@ import {
 	DropdownMenuTrigger,
 } from '../ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function LanguageToggle() {
-	function changeLanguage(language: string) {}
+	const router = useRouter();
+	const pathname = usePathname();
+	const segments = pathname.split('/');
+	const locales = ['en', 'id', 'jp'];
+	console.log('Current segments:', segments);
+
+	function switchLocale(newLocale: string) {
+		segments[1] = newLocale;
+		router.replace(segments.join('/'));
+	}
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button
-					variant='outline'
 					size='icon'
-					className='rounded-full bg-white dark:bg-black p-1 text-foreground border-0'
+					className='bg-transparent text-foreground hover:bg-transparent cursor-pointer rounded-full border-0'
 				>
-					<span>id</span>
-					<span>en</span>
-					<span>jp</span>
+					<span>{segments[1]}</span>
 					<span className='sr-only'>Toggle language</span>
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => changeLanguage('id')}>Indonesian</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => changeLanguage('en')}>English</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => changeLanguage('jp')}>Japanese</DropdownMenuItem>
+				{locales.map((locale) => (
+					<DropdownMenuItem
+						key={locale}
+						onClick={() => switchLocale(locale)}
+						className={`capitalize ${segments[1] === locale && 'font-bold'}`}
+					>
+						{locale === 'en' && 'English'}
+						{locale === 'jp' && '日本語'}
+						{locale === 'id' && 'Indonesia'}
+					</DropdownMenuItem>
+				))}
 			</DropdownMenuContent>
 		</DropdownMenu>
 	);

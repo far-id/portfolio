@@ -44,9 +44,9 @@ export default function ContactLayout({ children }: Readonly<{ children: React.R
 						<AccordionContent>
 							<FadeIn>
 								<div className='py-4 border-b flex flex-col gap-2'>
-									{CONTACT.map((mail, index) => (
+									{CONTACT.map((mail) => (
 										<Link
-											key={index}
+											key={mail.label}
 											href={mail.path}
 											target='_blank'
 											className={`text-sm hover:underline flex gap-x-2 items-center underline-offset-2 px-4`}

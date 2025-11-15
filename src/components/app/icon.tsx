@@ -214,4 +214,60 @@ export const Icon = {
 			></path>
 		</svg>
 	),
+	GitFork: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
+			<path
+				fill='none'
+				stroke='currentColor'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+				strokeWidth={1.5}
+				d='M17 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4M7 7a2 2 0 1 0 0-4a2 2 0 0 0 0 4m0 14a2 2 0 1 0 0-4a2 2 0 0 0 0 4M7 7v10M17 7v1c0 2.5-2 3-2 3l-6 2s-2 .5-2 3v1'
+			></path>
+		</svg>
+	),
+	Sync: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 512 512' {...props}>
+			<path
+				fill='none'
+				stroke='currentColor'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+				strokeWidth={32}
+				d='M434.67 285.59v-29.8c0-98.73-80.24-178.79-179.2-178.79a179 179 0 0 0-140.14 67.36m-38.53 82v29.8C76.8 355 157 435 256 435a180.45 180.45 0 0 0 140-66.92'
+			></path>
+			<path
+				fill='none'
+				stroke='currentColor'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+				strokeWidth={32}
+				d='m32 256l44-44l46 44m358 0l-44 44l-46-44'
+			></path>
+		</svg>
+	),
+	XCircle: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 512 512' {...props}>
+			<path
+				fill='currentColor'
+				d='m348.071 141.302l-87.763 87.763l-87.763-87.763l-22.628 22.627l87.764 87.763l-87.764 87.764l22.628 22.627l87.763-87.763l87.763 87.763l22.628-22.627l-87.764-87.764l87.764-87.763z'
+			></path>
+			<path
+				fill='currentColor'
+				d='M425.706 86.294A240 240 0 0 0 86.294 425.706A240 240 0 0 0 425.706 86.294M256 464c-114.691 0-208-93.309-208-208S141.309 48 256 48s208 93.309 208 208s-93.309 208-208 208'
+			></path>
+		</svg>
+	),
+	DoubleCheck: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
+			<path
+				fill='none'
+				stroke='currentColor'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+				strokeWidth={2}
+				d='m7 17l-5-5m5 0l5 5L22 7m-10 5l5-5'
+			></path>
+		</svg>
+	),
 };

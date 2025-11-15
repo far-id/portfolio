@@ -3,10 +3,10 @@
 import { motion, useDragControls } from 'framer-motion';
 import { useRef } from 'react';
 import { ThemeToggle } from '@/components/app/theme-toggle';
-import LanguageToggle from '@/components/app/language-toggle';
 import Footer from '@/components/app/footer';
+import LanguageToggle from '@/components/app/language-toggle';
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
+export default function AppLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	const constraintsRef = useRef<HTMLDivElement>(null);
 	const controls = useDragControls();
 
@@ -37,8 +37,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
 							<span className='size-3 rounded-full bg-green-500'></span>
 						</div>
 						<span>far-id</span>
-						<div>
-							{/* <LanguageToggle /> */}
+						<div></div>
+						<div className='flex items-center gap-x-4 absolute right-4'>
+							<LanguageToggle />
 							<ThemeToggle />
 						</div>
 					</div>
