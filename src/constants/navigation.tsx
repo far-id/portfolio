@@ -15,13 +15,13 @@ export const NAVIGATION: {
 }[] = [
 	{
 		label: 'Home',
-		icon: Icon.home,
+		icon: Icon.Hello,
 		path: '/',
 		tooltip: '_Home',
 	},
 	{
 		label: 'About',
-		icon: Icon.about,
+		icon: Icon.About,
 		path: '/about',
 		tooltip: '_About',
 		children: [
@@ -39,13 +39,13 @@ export const NAVIGATION: {
 	},
 	{
 		label: 'Projects',
-		icon: Icon.projects,
+		icon: Icon.Projects,
 		path: '/projects',
 		tooltip: '_Projects',
 	},
 	{
 		label: 'Contact',
-		icon: Icon.contact,
+		icon: Icon.Contact,
 		path: '/contact',
 		tooltip: '_Contact',
 	},

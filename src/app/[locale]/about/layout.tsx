@@ -34,7 +34,7 @@ export default function AboutLayout({ children }: Readonly<{ children: React.Rea
 												pathname === tab.path && 'bg-muted'
 											}`}
 										>
-											<Icon.typescript className='size-4 shrink-0' />
+											<Icon.Typescript className='size-4 shrink-0' />
 											{tab.label}
 										</Link>
 									))}

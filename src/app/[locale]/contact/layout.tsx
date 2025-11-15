@@ -15,22 +15,22 @@ const CONTACT = [
 	{
 		label: 'Email',
 		path: siteConfig.links.mailto,
-		icon: Icon.email,
+		icon: Icon.Email,
 	},
 	{
 		label: 'LinkedIn',
 		path: siteConfig.links.linkedin,
-		icon: Icon.fillLinkedin,
+		icon: Icon.FillLinkedin,
 	},
 	{
 		label: 'GitHub',
 		path: siteConfig.links.github,
-		icon: Icon.fillGithub,
+		icon: Icon.FillGithub,
 	},
 	{
 		label: 'Instagram',
 		path: siteConfig.links.instagram,
-		icon: Icon.instagram,
+		icon: Icon.Instagram,
 	},
 ];
 

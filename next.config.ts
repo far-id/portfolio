@@ -17,6 +17,11 @@ const nextConfig: NextConfig = {
         source: "/:locale/about/personal",
         destination: "/:locale/about/personal.ts",
         permanent: true,
+      },
+      {
+        source: "/:locale/about/skills",
+        destination: "/:locale/about/skills.ts",
+        permanent: true,
       }
     ];
   },

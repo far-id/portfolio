@@ -47,7 +47,7 @@ export function ThemeToggle() {
 										transition={{ duration: 0.2 }}
 										exit={{ opacity: 0, rotate: 90 }}
 									>
-										<Icon.moon className='size-4' />
+										<Icon.Moon className='size-4' />
 									</motion.div>
 								)}
 								{theme !== 'dark' && (
@@ -58,7 +58,7 @@ export function ThemeToggle() {
 										transition={{ duration: 0.2 }}
 										exit={{ opacity: 0, rotate: -90 }}
 									>
-										<Icon.sun className='size-4' />
+										<Icon.Sun className='size-4' />
 									</motion.div>
 								)}
 							</>

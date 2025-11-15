@@ -1,7 +1,7 @@
 type Props = React.SVGProps<SVGSVGElement>;
 
 export const Icon = {
-	moon: (props: Props) => (
+	Moon: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='currentColor'
@@ -13,7 +13,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	sun: (props: Props) => (
+	Sun: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path fill='currentColor' d='M18 12a6 6 0 1 1-12 0a6 6 0 0 1 12 0'></path>
 			<path
@@ -24,7 +24,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	home: (props: Props) => (
+	Hello: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 16 16' {...props}>
 			<path
 				fill='currentColor'
@@ -34,7 +34,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	about: (props: Props) => (
+	About: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<g
 				fill='none'
@@ -48,7 +48,7 @@ export const Icon = {
 			</g>
 		</svg>
 	),
-	projects: (props: Props) => (
+	Projects: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='currentColor'
@@ -61,7 +61,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	contact: (props: Props) => (
+	Contact: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='none'
@@ -73,7 +73,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	github: (props: Props) => (
+	Github: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<g
 				fill='none'
@@ -87,7 +87,7 @@ export const Icon = {
 			</g>
 		</svg>
 	),
-	fillGithub: (props: Props) => (
+	FillGithub: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 20 20' {...props}>
 			<path
 				fill='currentColor'
@@ -95,7 +95,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	instagram: (props: Props) => (
+	Instagram: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='currentColor'
@@ -103,7 +103,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	linkedin: (props: Props) => (
+	Linkedin: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='currentColor'
@@ -113,7 +113,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	fillLinkedin: (props: Props) => (
+	FillLinkedin: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 16 16' {...props}>
 			<path
 				fill='currentColor'
@@ -121,7 +121,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	email: (props: Props) => (
+	Email: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='currentColor'
@@ -131,7 +131,7 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	share: (props: Props) => (
+	Share: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
 			<path
 				fill='none'
@@ -143,11 +143,74 @@ export const Icon = {
 			></path>
 		</svg>
 	),
-	typescript: (props: Props) => (
+	Typescript: (props: Props) => (
 		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 32 32' {...props}>
 			<path
 				fill='currentColor'
 				d='M0 16v16h32V0H0zm25.786-1.276a4 4 0 0 1 2.005 1.156c.292.312.729.885.766 1.026c.01.042-1.38.974-2.224 1.495c-.031.021-.156-.109-.292-.313c-.411-.599-.844-.859-1.505-.906c-.969-.063-1.594.443-1.589 1.292a1.26 1.26 0 0 0 .135.599c.214.443.615.708 1.854 1.245c2.292.984 3.271 1.635 3.88 2.557c.682 1.031.833 2.677.375 3.906c-.51 1.328-1.771 2.234-3.542 2.531c-.547.099-1.849.083-2.438-.026c-1.286-.229-2.505-.865-3.255-1.698c-.297-.323-.87-1.172-.833-1.229c.016-.021.146-.104.292-.188l1.188-.688l.922-.536l.193.286c.271.411.859.974 1.214 1.161c1.021.542 2.422.464 3.115-.156c.281-.234.438-.594.417-.958c0-.37-.047-.536-.24-.813c-.25-.354-.755-.656-2.198-1.281c-1.651-.714-2.365-1.151-3.01-1.854a4.2 4.2 0 0 1-.88-1.599c-.12-.453-.151-1.589-.057-2.042c.339-1.599 1.547-2.708 3.281-3.036c.563-.109 1.875-.068 2.427.068zm-7.51 1.339l.01 1.307h-4.167v11.839h-2.948V17.37H7.01v-1.281c0-.714.016-1.307.036-1.323c.016-.021 2.547-.031 5.62-.026l5.594.016z'
+			></path>
+		</svg>
+	),
+	Warning: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
+			<path
+				fill='currentColor'
+				d='M13 17a.999.999 0 1 0-1.998 0a.999.999 0 0 0 1.997 0m-.26-7.853a.75.75 0 0 0-1.493.103l.004 4.501l.007.102a.75.75 0 0 0 1.493-.103l-.004-4.502zm1.23-5.488c-.857-1.548-3.082-1.548-3.938 0L2.286 17.66c-.83 1.5.255 3.34 1.97 3.34h15.49c1.714 0 2.799-1.84 1.969-3.34zm-2.626.726a.75.75 0 0 1 1.313 0l7.746 14.002a.75.75 0 0 1-.657 1.113H4.256a.75.75 0 0 1-.657-1.113z'
+			></path>
+		</svg>
+	),
+	Home: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
+			<g fill='none' stroke='currentColor' strokeWidth={2}>
+				<path d='M5 12.76c0-1.358 0-2.037.274-2.634c.275-.597.79-1.038 1.821-1.922l1-.857C9.96 5.75 10.89 4.95 12 4.95s2.041.799 3.905 2.396l1 .857c1.03.884 1.546 1.325 1.82 1.922c.275.597.275 1.276.275 2.634V17c0 1.886 0 2.828-.586 3.414S16.886 21 15 21H9c-1.886 0-2.828 0-3.414-.586S5 18.886 5 17z'></path>
+				<path
+					strokeLinecap='round'
+					strokeLinejoin='round'
+					d='M14.5 21v-5a1 1 0 0 0-1-1h-3a1 1 0 0 0-1 1v5'
+				></path>
+			</g>
+		</svg>
+	),
+	LeftArrow: (props: Props) => (
+		<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24' {...props}>
+			<g
+				fill='none'
+				stroke='currentColor'
+				strokeLinecap='round'
+				strokeLinejoin='round'
+				strokeWidth={2}
+			>
+				<path strokeDasharray={20} strokeDashoffset={20} d='M21 12h-17.5'>
+					<animate
+						fill='freeze'
+						attributeName='stroke-dashoffset'
+						dur='0.2s'
+						values='20;0'
+					></animate>
+				</path>
+				<path strokeDasharray={12} strokeDashoffset={12} d='M3 12l7 7M3 12l7 -7'>
+					<animate
+						fill='freeze'
+						attributeName='stroke-dashoffset'
+						begin='0.2s'
+						dur='0.2s'
+						values='12;0'
+					></animate>
+				</path>
+			</g>
+		</svg>
+	),
+	Loading: (props: Props) => (
+		<svg
+			xmlns='http://www.w3.org/2000/svg'
+			width={1024}
+			height={1024}
+			viewBox='0 0 1024 1024'
+			{...props}
+		>
+			<path
+				fill='currentColor'
+				d='M512 1024c-69.1 0-136.2-13.5-199.3-40.2C251.7 958 197 921 150 874S66 772.3 40.2 711.3C13.5 648.2 0 581.1 0 512c0-19.9 16.1-36 36-36s36 16.1 36 36c0 59.4 11.6 117 34.6 171.3c22.2 52.4 53.9 99.5 94.3 139.9s87.5 72.2 139.9 94.3C395 940.4 452.6 952 512 952s117-11.6 171.3-34.6c52.4-22.2 99.5-53.9 139.9-94.3s72.2-87.5 94.3-139.9C940.4 629 952 571.4 952 512s-11.6-117-34.6-171.3a440.5 440.5 0 0 0-94.3-139.9a437.7 437.7 0 0 0-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.2C772.3 66 827 103 874 150s83.9 101.8 109.7 162.7c26.7 63.1 40.2 130.2 40.2 199.3s-13.5 136.2-40.2 199.3C958 772.3 921 827 874 874s-101.8 83.9-162.7 109.7c-63.1 26.8-130.2 40.3-199.3 40.3'
 			></path>
 		</svg>
 	),

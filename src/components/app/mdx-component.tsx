@@ -1,7 +1,7 @@
 import FadeIn from '@/components/app/fade-in';
 import { cn } from '@/lib/utils';
 
-export function MDXComponent({ children }: { children: React.ReactNode }) {
+export function MDXComponent({ children }: { readonly children: React.ReactNode }) {
 	return (
 		<FadeIn>
 			<article

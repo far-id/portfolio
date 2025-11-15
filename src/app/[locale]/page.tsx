@@ -10,17 +10,17 @@ const socialLinks: {
 	{
 		name: 'Github',
 		href: siteConfig.links.github,
-		icon: Icon.github,
+		icon: Icon.Github,
 	},
 	{
 		name: 'Instagram',
 		href: siteConfig.links.instagram,
-		icon: Icon.instagram,
+		icon: Icon.Instagram,
 	},
 	{
 		name: 'LinkedIn',
 		href: siteConfig.links.linkedin,
-		icon: Icon.linkedin,
+		icon: Icon.Linkedin,
 	},
 ] as const;
 
@@ -58,7 +58,7 @@ export default async function IndexPage() {
 						>
 							<social.icon className='size-6 group-hover:scale-110 transition-transform duration-200' />
 							{social.name}
-							<Icon.share className='ml-1 size-4 opacity-0 group-hover:opacity-100 duration-200 transition-opacity' />
+							<Icon.Share className='ml-1 size-4 opacity-0 group-hover:opacity-100 duration-200 transition-opacity' />
 						</Link>
 					))}
 				</div>
