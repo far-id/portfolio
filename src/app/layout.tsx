@@ -6,6 +6,7 @@ import { ThemeProvider } from '@/components/app/theme-provider';
 import { NextIntlClientProvider } from 'next-intl';
 import Sidebar from '@/components/app/sidebar';
 import { Toaster } from '@/components/ui/sonner';
+import { getLocale } from 'next-intl/server';
 
 const firaCode = Fira_Code({
 	variable: '--font-fira-code',
@@ -19,12 +20,11 @@ export const metadata: Metadata = {
 
 type Props = {
 	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
 };
 
-export default async function RootLayout({ children, params }: Readonly<Props>) {
+export default async function RootLayout({ children }: Readonly<Props>) {
 	// Ensure that the incoming `locale` is valid
-	const { locale } = await params;
+	const locale = await getLocale();
 
 	return (
 		<html lang={locale} className='dark' style={{ colorScheme: 'dark' }} suppressHydrationWarning>
