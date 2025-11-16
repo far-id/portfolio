@@ -1,0 +1,41 @@
+{
+	"contact": {
+		"getInTouch": "Lets get in touch.",
+		"contactDescription": "Feel free to reach me and talk about your project",
+		"field": {
+			"name": "Name",
+			"email": "Email",
+			"subject": "Subject",
+			"message": "Message",
+			"messageDescription": "Please provide as much detail as possible so I can best assist you.",
+			"placeholder": {
+				"name": "Tell me what's your name",
+				"email": "For me to reach you back",
+				"subject": "What is your message about?",
+				"message": "Let me know what's on your mind..."
+			},
+			"characters": "characters",
+			"error": {
+				"name": {
+					"min": "Sorry, name must be at least 3 characters.",
+					"max": "You can write longer names, but I prefer shorter ones.",
+					"pattern": "Name can only contain letters, spaces, apostrophes, dots, and hyphens."
+				},
+				"email": {
+					"format": "Are you sure this is a valid email address?",
+					"max": "I can only handle emails up to 100 characters."
+				},
+				"subject": {
+					"min": "Subject must be at least 2 characters.",
+					"max": "Please keep the subject under 100 characters."
+				},
+				"message": {
+					"min": "Please provide more details in your message.",
+					"max": "Please keep the message under 1000 characters."
+				}
+			}
+		},
+		"sendMessage": "Send Message",
+		"successMessage": "Thank you for reaching out! I will get back to you soon to discuss your project."
+	}
+}

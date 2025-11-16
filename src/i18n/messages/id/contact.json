@@ -1,0 +1,41 @@
+{
+	"contact": {
+		"getInTouch": "Mari berbicara.",
+		"contactDescription": "Jangan ragu untuk menghubungi saya dan membicarakan proyek Anda.",
+		"field": {
+			"name": "Nama",
+			"email": "Email",
+			"subject": "Subjek",
+			"message": "Pesan",
+			"messageDescription": "Harap berikan detail sebanyak mungkin agar saya dapat membantu Anda dengan sebaik-baiknya.",
+			"placeholder": {
+				"name": "Siapa nama Anda?",
+				"email": "Agar saya dapat menghubungi Anda kembali",
+				"subject": "Tentang apa pesan Anda?",
+				"message": "Beritahu saya apa yang sedang Anda pikirkan..."
+			},
+			"characters": "karakter",
+			"error": {
+				"name": {
+					"min": "Maaf, nama harus berisi setidaknya 3 karakter.",
+					"max": "Anda boleh menulis nama yang lebih panjang, tetapi saya lebih suka yang lebih pendek.",
+					"pattern": "Nama hanya boleh mengandung huruf, spasi, apostrof, titik, dan tanda hubung."
+				},
+				"email": {
+					"format": "Apakah Anda yakin ini alamat email yang valid?",
+					"max": "Saya hanya dapat memproses email hingga 100 karakter."
+				},
+				"subject": {
+					"min": "Subjek harus berisi setidaknya 2 karakter.",
+					"max": "Harap jaga subjek tetap di bawah 100 karakter."
+				},
+				"message": {
+					"min": "Harap berikan lebih banyak detail pada pesan Anda.",
+					"max": "Harap jaga pesan tetap di bawah 1000 karakter."
+				}
+			}
+		},
+		"sendMessage": "Kirim Pesan",
+		"successMessage": "Terima kasih telah menghubungi! Saya akan segera menghubungi Anda untuk membahas proyek Anda."
+	}
+}

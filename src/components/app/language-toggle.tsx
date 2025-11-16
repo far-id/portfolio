@@ -13,7 +13,7 @@ export default function LanguageToggle() {
 	const pathname = usePathname();
 	const segments = pathname.split('/');
 	const locales = ['en', 'id', 'jp'];
-	console.log('Current segments:', segments);
+
 
 	function switchLocale(newLocale: string) {
 		segments[1] = newLocale;

@@ -1,5 +1,6 @@
 import { Icon } from '@/components/app/icon';
 import { siteConfig } from '@/constants/siteConfig';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 const socialLinks: {
@@ -24,19 +25,21 @@ const socialLinks: {
 	},
 ] as const;
 
-export default async function IndexPage() {
+export default function IndexPage() {
+	const t = useTranslations('home');
+
 	return (
 		<div className='flex items-center justify-center size-full'>
 			<div className='flex flex-col items-center justify-center'>
-				<p className='text-lg tracking-widest text-muted-foreground'>HI ALL. I AM</p>
+				<p className='text-lg tracking-widest text-muted-foreground'>{t('greeting')}</p>
 				<h1 className='text-5xl font-bold mt-4 mb-2'>FARID RIZKY WIJAYA</h1>
 				<h2 className='text-xl mb-6 gap-x-3 flex mt-2'>
 					<span>&gt;</span>
 					<span className='bg-linear-to-r from-foreground to-muted-foreground bg-clip-text text-transparent'>
-						Software Developer
+						{t('developer')}
 					</span>
 				</h2>
-				<p className='max-w-xl text-center text-muted-foreground'>{`// you can also see it on my Github Page`}</p>
+				<p className='max-w-xl text-center text-muted-foreground'>{`// ${t('githubDescription')}`}</p>
 				<div className='flex gap-x-2'>
 					<span className='text-[#f9a245]'>const </span>
 					<span className='text-[#1979D7]'>githubLink </span>

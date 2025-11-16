@@ -1,8 +1,7 @@
 {
 	"home": {
-		"welcome": "私たちのアプリケーションへようこそ！",
-		"description": "ここは最新の更新情報や機能を見つけることができるホームページです。",
-		"getStarted": "始める",
-		"learnMore": "もっと詳しく"
+		"greeting": "こんにちは、私は",
+		"developer": "ソフトウェア開発者",
+		"githubDescription": "私のGithubページでも見ることができます"
 	}
 }

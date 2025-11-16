@@ -1,6 +1,6 @@
-import React from 'react';
+import { useTranslations } from 'next-intl';
 
-export default async function Projects() {
-	await new Promise((resolve) => setTimeout(resolve, 2000));
-	return <div>Project</div>;
+export default function Projects() {
+	const t = useTranslations('home');
+	return <div>{t('welcome')}</div>;
 }

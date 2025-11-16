@@ -22,6 +22,7 @@ export function ThemeToggle() {
 		const t = setTimeout(() => setMounted(true), 0);
 		return () => clearTimeout(t);
 	}, []);
+
 	function changeTheme(theme: string) {
 		setTimeout(() => {
 			setTheme(theme);

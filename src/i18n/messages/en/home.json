@@ -1,8 +1,7 @@
 {
 	"home": {
-		"welcome": "Welcome to our application!",
-		"description": "This is the home page where you can find the latest updates and features.",
-		"getStarted": "Get Started",
-		"learnMore": "Learn More"
+		"greeting": "HI ALL. I AM",
+		"developer": "Software Developer",
+		"githubDescription": "you can also see it on my Github Page"
 	}
 }

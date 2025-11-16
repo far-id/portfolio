@@ -15,31 +15,28 @@ import {
 } from '@/components/ui/input-group';
 import { EmailType } from '@/types/email';
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
-const formSchema = z.object({
-	name: z
-		.string()
-		.min(3, 'Sorry, name must be at least 3 characters.')
-		.max(32, 'You can write longer names, but I prefer shorter ones.')
-		.regex(
-			/^[a-zA-Z\s'.-]+$/,
-			'Name can only contain letters, spaces, apostrophes, dots, and hyphens.'
-		),
-	email: z
-		.email('Are you sure this is a valid email address?')
-		.max(100, 'I can only handle emails up to 100 characters.'),
-	subject: z
-		.string()
-		.min(2, 'Subject must be at least 2 characters.')
-		.max(100, 'Please keep the subject under 100 characters.'),
-	message: z
-		.string()
-		.min(10, 'Please provide more details in your message.')
-		.max(1000, 'Please keep the message under 1000 characters.'),
-} satisfies Record<keyof EmailType, z.ZodType>);
+function createContactSchema(t: ReturnType<typeof useTranslations>) {
+	return z.object({
+		name: z
+			.string()
+			.min(3, t('field.error.name.min'))
+			.max(32, t('field.error.name.max'))
+			.regex(/^[a-zA-Z\s'.-]+$/, t('field.error.name.pattern')),
+		email: z.email(t('field.error.email.format')).max(100, t('field.error.email.max')),
+		subject: z.string().min(2, t('field.error.subject.min')).max(100, t('field.error.subject.max')),
+		message: z
+			.string()
+			.min(10, t('field.error.message.min'))
+			.max(1000, t('field.error.message.max')),
+	} satisfies Record<keyof EmailType, z.ZodType>);
+}
 
 export default function Contact() {
+	const t = useTranslations('contact');
 	const [isDisabled, setIsDisabled] = useState<boolean>(false);
+	const formSchema = createContactSchema(t);
 	const form = useForm<z.infer<typeof formSchema>>({
 		resolver: zodResolver(formSchema),
 		defaultValues: {
@@ -63,13 +60,10 @@ export default function Contact() {
 			if (!response.ok) {
 				throw new Error('Failed to send message');
 			}
-			toast.success(
-				'Thank you for reaching out! I will get back to you soon to discuss your project.',
-				{
-					duration: 5000,
-					position: 'top-center',
-				}
-			);
+			toast.success(t('successMessage'), {
+				duration: 5000,
+				position: 'top-center',
+			});
 		} catch (error) {
 			console.error('Error while sending message:', error);
 			toast.error(
@@ -85,8 +79,8 @@ export default function Contact() {
 
 	return (
 		<div className='px-4 py-8'>
-			<h1 className='text-foreground font font-semibold text-2xl'>Lets get in touch.</h1>
-			<span className='mt-8 text-muted-foreground'>{`// Feel free to reach me and talk about your project`}</span>
+			<h1 className='text-foreground font font-semibold text-2xl'>{t('getInTouch')}</h1>
+			<span className='mt-8 text-muted-foreground'>{`// ${t('contactDescription')}`}</span>
 			<form id='form-rhf-demo' onSubmit={form.handleSubmit(onSubmit)}>
 				<FieldGroup className='gap-4 my-4'>
 					<div className='flex items-center gap-4 md:gap-8 md:flex-row flex-col'>
@@ -95,12 +89,12 @@ export default function Contact() {
 							control={form.control}
 							render={({ field, fieldState }) => (
 								<Field data-invalid={fieldState.invalid}>
-									<FieldLabel htmlFor='form-rhf-demo-title'>_Name</FieldLabel>
+									<FieldLabel htmlFor='form-rhf-demo-title'>_{t('field.name')}</FieldLabel>
 									<Input
 										{...field}
 										id='form-rhf-demo-title'
 										aria-invalid={fieldState.invalid}
-										placeholder="Tell me what's your name"
+										placeholder={t('field.placeholder.name')}
 										autoComplete='off'
 									/>
 									{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -112,12 +106,12 @@ export default function Contact() {
 							control={form.control}
 							render={({ field, fieldState }) => (
 								<Field data-invalid={fieldState.invalid}>
-									<FieldLabel htmlFor='form-rhf-demo-title'>_Email</FieldLabel>
+									<FieldLabel htmlFor='form-rhf-demo-title'>_{t('field.email')}</FieldLabel>
 									<Input
 										{...field}
 										id='form-rhf-demo-title'
 										aria-invalid={fieldState.invalid}
-										placeholder='For me to reach you back'
+										placeholder={t('field.placeholder.email')}
 										autoComplete='off'
 									/>
 									{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -130,12 +124,12 @@ export default function Contact() {
 						control={form.control}
 						render={({ field, fieldState }) => (
 							<Field data-invalid={fieldState.invalid}>
-								<FieldLabel htmlFor='form-rhf-demo-title'>_Subject</FieldLabel>
+								<FieldLabel htmlFor='form-rhf-demo-title'>_{t('field.subject')}</FieldLabel>
 								<Input
 									{...field}
 									id='form-rhf-demo-title'
 									aria-invalid={fieldState.invalid}
-									placeholder='What is your message about?'
+									placeholder={t('field.placeholder.subject')}
 									autoComplete='off'
 								/>
 								{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
@@ -147,25 +141,23 @@ export default function Contact() {
 						control={form.control}
 						render={({ field, fieldState }) => (
 							<Field data-invalid={fieldState.invalid}>
-								<FieldLabel htmlFor='form-rhf-demo-description'>_Messsage</FieldLabel>
+								<FieldLabel htmlFor='form-rhf-demo-description'>_{t('field.message')}</FieldLabel>
 								<InputGroup>
 									<InputGroupTextarea
 										{...field}
 										id='form-rhf-demo-description'
-										placeholder="Let me know what's on your mind..."
+										placeholder={t('field.placeholder.message')}
 										rows={6}
 										className='min-h-24'
 										aria-invalid={fieldState.invalid}
 									/>
 									<InputGroupAddon align='block-end'>
 										<InputGroupText className='tabular-nums'>
-											{field.value.length}/1000 characters
+											{field.value.length}/1000 {t('field.characters')}
 										</InputGroupText>
 									</InputGroupAddon>
 								</InputGroup>
-								<FieldDescription>
-									Please provide as much detail as possible so I can best assist you.
-								</FieldDescription>
+								<FieldDescription>{`// ${t('field.messageDescription')}`}</FieldDescription>
 								{fieldState.invalid && <FieldError errors={[fieldState.error]} />}
 							</Field>
 						)}
@@ -174,7 +166,7 @@ export default function Contact() {
 			</form>
 			<Field orientation='horizontal'>
 				<Button type='submit' form='form-rhf-demo' disabled={isDisabled}>
-					Submit
+					{t('sendMessage')}
 					<svg xmlns='http://www.w3.org/2000/svg' width={24} height={24} viewBox='0 0 24 24'>
 						<path
 							fill='currentColor'
