@@ -1,9 +1,9 @@
 'use client';
 import { useState } from 'react';
 import { Icon } from './icon';
-import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/constants/siteConfig';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import Link from 'next/link';
 
 export default function Footer() {
 	const [rotateStatus, setRotateStatus] = useState<boolean>(false);

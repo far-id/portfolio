@@ -21,7 +21,7 @@ export function ThemeToggle() {
 	useEffect(() => {
 		const t = setTimeout(() => setMounted(true), 0);
 		return () => clearTimeout(t);
-	}, []);
+	}, [theme]);
 
 	function changeTheme(theme: string) {
 		setTimeout(() => {
@@ -38,7 +38,7 @@ export function ThemeToggle() {
 					className='rounded-full bg-transparent hover:bg-transparent hover:text-foreground cursor-pointer size-fit text-foreground border-0'
 				>
 					<AnimatePresence mode='wait' initial={false}>
-						{mounted && (
+						{mounted ? (
 							<>
 								{theme === 'dark' && (
 									<motion.div
@@ -63,7 +63,7 @@ export function ThemeToggle() {
 									</motion.div>
 								)}
 							</>
-						)}
+						) : null}
 					</AnimatePresence>
 					<span className='sr-only'>Toggle theme</span>
 				</Button>

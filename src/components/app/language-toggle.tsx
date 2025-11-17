@@ -25,7 +25,7 @@ export default function LanguageToggle() {
 			<DropdownMenuTrigger asChild>
 				<Button
 					size='icon'
-					className='bg-transparent text-foreground hover:bg-transparent cursor-pointer rounded-full border-0'
+					className='bg-transparent text-foreground hover:bg-transparent cursor-pointer rounded-full focus-visible:ring-0 border-0'
 				>
 					<span>{segments[1]}</span>
 					<span className='sr-only'>Toggle language</span>
