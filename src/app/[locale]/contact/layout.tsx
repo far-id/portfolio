@@ -40,7 +40,7 @@ export default function ContactLayout({ children }: Readonly<{ children: React.R
 			<div className='col-span-3 xl:col-span-2 border-r overflow-auto'>
 				<Accordion type='single' collapsible defaultValue='about'>
 					<AccordionItem value='about' defaultChecked>
-						<AccordionTrigger className='border-b px-4 py-3 text-left'>About Me</AccordionTrigger>
+						<AccordionTrigger className='border-b px-4 py-3 text-left'>Contact Me</AccordionTrigger>
 						<AccordionContent>
 							<FadeIn>
 								<div className='py-4 border-b flex flex-col gap-2'>
