@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/accordion';
 import { NAVIGATION } from '@/constants/navigation';
 import { Link, usePathname } from '@/i18n/navigation';
-import React from 'react';
 
 export default function AboutLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	const pathname = usePathname();
