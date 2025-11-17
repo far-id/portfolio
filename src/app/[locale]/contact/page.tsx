@@ -16,6 +16,7 @@ import {
 import { EmailType } from '@/types/email';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { SendEmail } from '@/actions/sendEmail';
 
 function createContactSchema(t: ReturnType<typeof useTranslations>) {
 	return z.object({
@@ -50,14 +51,8 @@ export default function Contact() {
 	async function onSubmit(data: z.infer<typeof formSchema>) {
 		setIsDisabled(true);
 		try {
-			const response = await fetch('/api/sendEmail', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(data),
-			});
-			if (!response.ok) {
+			const response = await SendEmail(data);
+			if (!response.success) {
 				throw new Error('Failed to send message');
 			}
 			toast.success(t('successMessage'), {
