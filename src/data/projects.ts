@@ -11,7 +11,7 @@ export const projects: ProjectType[] = [
   {
     title: "Aiterview",
     description:
-      "AI-powered interview simulation platform for Software Engineer candidates, featuring behavioral interviews, speech recognition, AI-generated questions, and automated interview evaluation.",
+      "Semi-vibecoded AI-powered interview simulation platform for Software Engineer candidates, featuring behavioral interviews, speech recognition, AI-generated questions, and automated interview evaluation.",
     techStack: [
       "Next.js",
       "TypeScript",
@@ -20,7 +20,7 @@ export const projects: ProjectType[] = [
       "Tailwind CSS",
       "Zustand",
     ],
-    demoLink: "https://aiterview.vercel.app",
+    demoLink: "https://aiterview.faridrw.my.id/",
     sourceLink: "https://github.com/far-id/aiterview",
     status: "completed",
   },
