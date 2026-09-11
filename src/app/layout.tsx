@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { Fira_Code } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import AppLayout from '@/layouts/app.layout';
 import { ThemeProvider } from '@/components/app/theme-provider';
 import { useLocale } from 'next-intl';
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 				<Toaster />
 				{/* Background effect */}
 				<div className='grain-noise fixed inset-0 pointer-events-none opacity-30' />
+				<Analytics />
 			</body>
 		</html>
 	);
